@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/home.dart';
+import 'package:flutter_app/login.dart';
+// import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,13 +14,21 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Material(
-        child: Center(
-          child: Container(
-            child: Text("This is Tehseen Jawed"),
-          ),
-        ),
+      themeMode: ThemeMode.dark,
+      theme: ThemeData(
+        primarySwatch: Colors.deepPurple,
+        // fontFamily: GoogleFonts.lato().fontFamily,
+        // primaryTextTheme: GoogleFonts.lateefTextTheme(),
       ),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark
+        // primarySwatch: Colors.red
+      ),
+      initialRoute: '/login',
+      routes: {
+        '/': (context) => HomeApp(),
+        '/login': (context) => LoginApp()
+      }
     );
   }
 }
